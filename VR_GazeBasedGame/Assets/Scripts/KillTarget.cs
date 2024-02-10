@@ -7,6 +7,7 @@ public class KillTarget : MonoBehaviour
     public GameObject target;
     public ParticleSystem hitEffect;
     public GameObject killEffect;
+    public GameObject killEffect2;
     public float timeToSelect = 3.0f;
     public int score;
     Transform camera;
@@ -46,8 +47,8 @@ public class KillTarget : MonoBehaviour
             else
             {
                 // killed
-                Instantiate(killEffect, target.transform.position,
-                    target.transform.rotation); 
+                Instantiate(killEffect, target.transform.position, target.transform.rotation); 
+                Instantiate(killEffect2, target.transform.position, target.transform.rotation);
                 score += 1;
                 countDown = timeToSelect;
                 SetRandomPosition();
